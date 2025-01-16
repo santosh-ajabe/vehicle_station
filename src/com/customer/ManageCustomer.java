@@ -16,6 +16,10 @@ public class ManageCustomer {
         customers.add(customer);
         saveCustomers();
     }
+    private void syso() {
+		// TODO Auto-generated method stub
+
+	}
 
     public void deleteCustomer(String mobileNumber) {
         customers.removeIf(customer -> customer.getMobileNumber().equals(mobileNumber));
