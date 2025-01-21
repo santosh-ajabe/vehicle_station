@@ -35,6 +35,7 @@ public class PartManager {
     public Part getPart(String partId) {
         return partsInventory.get(partId);
     }
+    
 
     public void displayAllParts() {
         if (partsInventory.isEmpty()) {
