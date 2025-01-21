@@ -1,11 +1,11 @@
-
 package com.customer;
+
 import java.io.*;
 import java.util.*;
 
 public class ManageCustomer {
     private HashSet<Customer> customers;
-    private final String FILE_NAME = "customers.dat";
+    private final String FILE_NAME = "customers.txt";
 
     public ManageCustomer() {
         customers = new HashSet<>();
@@ -16,10 +16,6 @@ public class ManageCustomer {
         customers.add(customer);
         saveCustomers();
     }
-    private void syso() {
-		// TODO Auto-generated method stub
-
-	}
 
     public void deleteCustomer(String mobileNumber) {
         customers.removeIf(customer -> customer.getMobileNumber().equals(mobileNumber));
