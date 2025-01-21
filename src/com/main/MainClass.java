@@ -1,11 +1,14 @@
 package com.main;
 
+import com.biling.Bill;
+import com.biling.ReturnBill;
 import com.customer.*;
 import com.menu.Menu;
 import com.parts.*;
 import com.services.*;
 import com.vehicle.*;
 import java.util.*;
+import com.biling.*;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -14,7 +17,12 @@ public class MainClass {
         ManageVehicle manageVehicle = new ManageVehicle();
         ManageServices manageServices = new ManageServices();
         PartManager partManager = new PartManager();
-        Bill bill ;
+        Bill bill = new Bill();
+        ReturnBill returnBill = new ReturnBill();
+       
+
+        //ManageService manageService = new ManageService();
+        Maintenance maintenance = new Maintenance();
         
         Menu menu = new Menu();
         
@@ -227,10 +235,17 @@ public class MainClass {
                     selectCustomerVehicle(scanner, manageCustomer, manageVehicle);
                     break;
                 case 2:
-                    processRequest(scanner, manageServices, manageCustomer, manageVehicle, partManager);
+                	
+                	ServiceSubMenuLogic sb = new ServiceSubMenuLogic();
+                    
+                    
+                    sb.handleServiceRequestMenu(scanner, manageServices, manageCustomer, manageVehicle, partManager);
+                   // processRequest(scanner, manageServices, manageCustomer, manageVehicle, partManager);
                     break;
                 case 3:
                     prepareAndDisplayBill();
+                    ReturnBill b = new ReturnBill();
+                    b.createBill(scanner, manageCustomer, manageVehicle, manageServices);
                     break;
                 case 4:
                     getBillPaymentFromCustomer();
@@ -240,6 +255,7 @@ public class MainClass {
             }
         }
     }
+    
 
     private static void selectCustomerVehicle(Scanner scanner, ManageCustomer manageCustomer, ManageVehicle manageVehicle) {
         System.out.print("Enter customer mobile number to select vehicle: ");
@@ -255,18 +271,37 @@ public class MainClass {
     private static void processRequest(Scanner scanner, ManageServices manageServices, ManageCustomer manageCustomer, ManageVehicle manageVehicle, PartManager partManager) {
         
         System.out.println("Processing service request...");
+        Menu menu = new Menu();
+        menu.displayProcessRequestMenu();
+        System.out.println(menu);
+        
     }
 
-    private static void prepareAndDisplayBill() {
+    @Override
+	public String toString() {
+		return "MainClass [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
+	private static void prepareAndDisplayBill() {
         
         System.out.println("Generating Bill...");
+//        ReturnBill b = new ReturnBill ();
+//        Scanner sc = new Scanner(System.in);
+//        
+//        b.createBill(null, null, null, null);
+//       // b.viewAllBills();
+//       // b.viewReturnBillDetails(null);
+//        System.out.println(b);
+       
+        
     }
 
     private static void getBillPaymentFromCustomer() {
         
-        System.out.println("Processing bill payment...");
+        System.out.println("Processing bill payment");
     }
-
+    
     private static void handlePartsMenu(Scanner scanner, PartManager partManager) {
         Menu menu = new Menu();
         
