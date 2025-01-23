@@ -1,36 +1,35 @@
 package com.services;
 
-import java.util.*;
-
-import com.customer.Customer;
-import com.parts.*;
-import com.vehicle.Vehicle;
-
+import java.security.Provider.Service;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import com.services.Services;
+@SuppressWarnings("unused")
 public class ManageServices {
-    private LinkedList<Services> serviceRequests;
+    private final List<Service> services;
 
     public ManageServices() {
-        serviceRequests = new LinkedList<>();
+        this.services = new ArrayList<>();
     }
 
-    public void addService(Services service) {
-        serviceRequests.add(service);
+    public void addService(com.services.Service service) {
+        services.addAll((Collection<? extends Service>) service);
     }
 
     public void displayAllServices() {
-        if (serviceRequests.isEmpty()) {
-            System.out.println("No services available.");
-        } else {
-            serviceRequests.forEach(System.out::println);
+        if (services.isEmpty()) {
+            System.out.println("No services recorded yet.");
+            return;
+        }
+
+        System.out.println("\n--- Existing Services ---");
+        for (Service service : services) {
+            System.out.println(service);
         }
     }
 
-	public void addService(Customer customer, Vehicle vehicle, String serviceType, double charges) {
-		
-		
-	}
-
-	public void displayServicesByCustomer(String searchMobile) {
-	
+	public double getServiceCostById(String serviceId) {
+		return 0;
 	}
 }

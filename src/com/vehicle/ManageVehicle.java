@@ -1,11 +1,9 @@
 package com.vehicle;
 
-import java.util.*;
-
-import com.customer.ManageCustomer;
+import java.util.HashMap;
 
 public class ManageVehicle {
-    private HashMap<String, Vehicle> vehicles; 
+    private HashMap<String, Vehicle> vehicles;
 
     public ManageVehicle() {
         vehicles = new HashMap<>();
@@ -31,8 +29,7 @@ public class ManageVehicle {
         }
     }
 
-	public void displayCustomerVehicles(String searchMobile, ManageCustomer manageCustomer) {
-		// TODO Auto-generated method stub
-		
+	public String getVehicleDetailsById(String vehicleId) {
+		return vehicleId;
 	}
 }

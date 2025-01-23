@@ -3,30 +3,14 @@ package com.vehicle;
 import java.io.Serializable;
 
 public class Vehicle implements Serializable {
-	private String manufacturer;
-	private String model;
 	private String vehicleNumber;
+	private String type;
+	private String ownerMobile;
 
-	public Vehicle(String manufacturer, String model, String vehicleNumber) {
-		this.manufacturer = manufacturer;
-		this.model = model;
+	public Vehicle(String vehicleNumber, String type, String ownerMobile) {
 		this.vehicleNumber = vehicleNumber;
-	}
-
-	public String getManufacturer() {
-		return manufacturer;
-	}
-
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
+		this.type = type;
+		this.ownerMobile = ownerMobile;
 	}
 
 	public String getVehicleNumber() {
@@ -37,13 +21,31 @@ public class Vehicle implements Serializable {
 		this.vehicleNumber = vehicleNumber;
 	}
 
-	@Override
-	public String toString() {
-		return "Vehicle{manufacturer='" + manufacturer + '\'' + ", model='" + model + '\'' + ", vehicleNumber='"
-				+ vehicleNumber + '\'' + '}';
+	public String getType() {
+		return type;
 	}
 
-	public void setVehicleNumber1(String nextLine) {
-		
+	public void setType(String type) {
+		this.type = type;
 	}
+
+	public String getOwnerMobile() {
+		return ownerMobile;
+	}
+
+	public void setOwnerMobile(String ownerMobile) {
+		this.ownerMobile = ownerMobile;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle{" + "vehicleNumber='" + vehicleNumber + '\'' + ", type='" + type + '\'' + ", ownerMobile='"
+				+ ownerMobile + '\'' + '}';
+	}
+
+	public String getRegistrationNumber() {
+
+		return ownerMobile;
+	}
+	
 }
