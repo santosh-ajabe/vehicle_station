@@ -180,7 +180,7 @@ public class MainClass {
 		if (customer != null) {
 			System.out.print("Enter vehicle registration number: ");
 			String vehicleNumber = scanner.nextLine();
-			System.out.print("Enter vehicle type: ");
+			System.out.print("Enter vehicle company name: ");
 			String vehicleType = scanner.nextLine();
 			Vehicle vehicle = new Vehicle(vehicleNumber, vehicleType, mobileNumber);
 			manageVehicle.addVehicle(vehicle);
@@ -242,9 +242,8 @@ public class MainClass {
 				ServiceSubMenuLogic sb = new ServiceSubMenuLogic();
 
 				sb.handleServiceRequestMenu(scanner, manageServices, manageCustomer, manageVehicle, partManager);
-				 processRequest(scanner, manageServices, manageCustomer, manageVehicle,
-				 partManager);
-				 
+				processRequest(scanner, manageServices, manageCustomer, manageVehicle, partManager);
+
 				break;
 			case 3:
 				prepareAndDisplayBill();
@@ -283,6 +282,7 @@ public class MainClass {
 		Menu menu = new Menu();
 		menu.displayProcessRequestMenu();
 		System.out.println(menu);
+		
 
 	}
 
