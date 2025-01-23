@@ -37,15 +37,18 @@ public class Vehicle implements Serializable {
 		this.ownerMobile = ownerMobile;
 	}
 
-	@Override
-	public String toString() {
-		return "Vehicle{" + "vehicleNumber='" + vehicleNumber + '\'' + ", type='" + type + '\'' + ", ownerMobile='"
-				+ ownerMobile + '\'' + '}';
-	}
+
 
 	public String getRegistrationNumber() {
 
 		return ownerMobile;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Vehicle{" + "vehicleNumber='" + vehicleNumber + '\'' + ", type='" + type + '\'' + ", ownerMobile='"
+				+ ownerMobile + '\'' + '}';
 	}
 	
 }
