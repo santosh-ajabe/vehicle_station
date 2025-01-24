@@ -6,4 +6,4 @@ bin/*
 *.classpath
 test.txt
 *.class
-/ .metadata/
+/.metadata/
