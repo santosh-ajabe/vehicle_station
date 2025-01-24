@@ -1,12 +1,13 @@
 package com.vehicle;
 
+
 import java.util.HashMap;
 
 import com.customer.ManageCustomer;
 
 public class ManageVehicle {
     private HashMap<String, Vehicle> vehicles;
-     
+
     public ManageVehicle() {
         vehicles = new HashMap<>();
     }
@@ -34,7 +35,10 @@ public class ManageVehicle {
         }
     }
 
-	public String getVehicleDetailsById(String vehicleId) {
-		return vehicleId;
-	}
+    public String getVehicleDetailsById(String vehicleId) {
+        Vehicle vehicle = vehicles.get(vehicleId);
+        return (vehicle != null) ? vehicle.toString() : "Vehicle not found.";
+    }
+
 }
+
