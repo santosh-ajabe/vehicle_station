@@ -39,7 +39,7 @@ public class ManageCustomer {
         }
     }
 
-    private void saveCustomers() {
+    public void saveCustomers() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(customers);
         } catch (IOException e) {
@@ -47,7 +47,7 @@ public class ManageCustomer {
         }
     }
 
-    private void loadCustomers() {
+    public void loadCustomers() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             customers = (HashSet<Customer>) ois.readObject();
         } catch (FileNotFoundException e) {

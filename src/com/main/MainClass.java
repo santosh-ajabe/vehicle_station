@@ -1,5 +1,7 @@
 package com.main;
 
+
+
 import com.biling.Bill;
 import com.biling.ReturnBill;
 import com.customer.*;
@@ -185,6 +187,7 @@ public class MainClass {
 			Vehicle vehicle = new Vehicle(vehicleNumber, vehicleType, mobileNumber);
 			manageVehicle.addVehicle(vehicle);
 			customer.addVehicle(vehicle);
+			manageCustomer.saveCustomers();
 			System.out.println("Vehicle added successfully.");
 		} else {
 			System.out.println("Customer not found.");
@@ -193,6 +196,7 @@ public class MainClass {
 
 	private static void displayCustomerVehicles(Scanner scanner, ManageVehicle manageVehicle,
 			ManageCustomer manageCustomer) {
+		manageCustomer.loadCustomers();
 		System.out.print("Enter customer mobile number to view vehicles: ");
 		String mobileNumber = scanner.nextLine();
 		Customer customer = manageCustomer.getCustomer(mobileNumber);
@@ -344,7 +348,7 @@ public class MainClass {
 		String name = scanner.nextLine();
 		System.out.print("Enter part price: ");
 		double price = scanner.nextDouble();
-		partManager.addPart(new Part(name, null, price));
+		partManager.addPart(new Part(name,name, price));
 		System.out.println("Part added.");
 	}
 
