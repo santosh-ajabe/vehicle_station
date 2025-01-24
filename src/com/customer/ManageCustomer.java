@@ -43,7 +43,7 @@ public class ManageCustomer {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(customers);
         } catch (IOException e) {
-            System.out.println("Error saving customer data: " + e.getMessage());
+            System.out.println("Error saving customer data " + e.getMessage());
         }
     }
 
@@ -51,9 +51,9 @@ public class ManageCustomer {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             customers = (HashSet<Customer>) ois.readObject();
         } catch (FileNotFoundException e) {
-            System.out.println("Customer file not found. Starting fresh.");
+            System.out.println("Customer file not found");
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error loading customer data: " + e.getMessage());
+            System.out.println("Error loading customer data " + e.getMessage());
         }
     }
 }

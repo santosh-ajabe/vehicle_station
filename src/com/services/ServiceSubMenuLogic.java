@@ -5,8 +5,6 @@ import com.customer.Customer;
 import com.parts.PartManager;
 import com.vehicle.*;
 import com.vehicle.Vehicle;
-//import com.demo.services.*;
-
 import java.util.Scanner;
 
 public class ServiceSubMenuLogic {
@@ -21,7 +19,7 @@ public class ServiceSubMenuLogic {
             System.out.println("0. Back to Main Menu");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 0:
