@@ -20,7 +20,7 @@ public class ServiceSubMenuLogic {
             System.out.println("0. Back to Main Menu");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 0:

@@ -1,9 +1,11 @@
 package com.vehicle;
 
+
 import java.util.HashMap;
 
 public class ManageVehicle {
     private HashMap<String, Vehicle> vehicles;
+    
 
     public ManageVehicle() {
         vehicles = new HashMap<>();
@@ -11,6 +13,7 @@ public class ManageVehicle {
 
     public void addVehicle(Vehicle vehicle) {
         vehicles.put(vehicle.getVehicleNumber(), vehicle);
+        
     }
 
     public void deleteVehicle(String vehicleNumber) {
@@ -29,7 +32,10 @@ public class ManageVehicle {
         }
     }
 
-	public String getVehicleDetailsById(String vehicleId) {
-		return vehicleId;
-	}
+    public String getVehicleDetailsById(String vehicleId) {
+        Vehicle vehicle = vehicles.get(vehicleId);
+        return (vehicle != null) ? vehicle.toString() : "Vehicle not found.";
+    }
+
 }
+
