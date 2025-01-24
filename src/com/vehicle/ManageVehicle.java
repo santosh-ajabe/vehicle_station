@@ -13,8 +13,7 @@ public class ManageVehicle {
     }
 
     public void addVehicle(Vehicle vehicle) {
-        vehicles.put(vehicle.getVehicleNumber(), vehicle);
-        
+        vehicles.put(vehicle.getVehicleNumber(), vehicle); 
     }
 
     public void deleteVehicle(String vehicleNumber) {
