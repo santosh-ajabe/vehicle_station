@@ -3,7 +3,7 @@ folder/
 bin/*
 .settings/*
 .project
-.classpath
+*.classpath
 test.txt
-.class
+*.class
 /.metadata/
