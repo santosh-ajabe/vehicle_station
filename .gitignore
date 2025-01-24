@@ -7,3 +7,6 @@ bin/*
 test.txt
 .class
 /.metadata/
+
+
+git rm --cached customers.txt
