@@ -10,7 +10,12 @@ public class Customer implements Serializable {
     private String mobileNumber;
     private HashMap<String, Vehicle> vehicles;
 
-    public Customer(String name, String address, String mobileNumber) {
+    public Customer() {
+		super();
+		 
+	}
+
+	public Customer(String name, String address, String mobileNumber) {
         this.name = name;
         this.address = address;
         this.mobileNumber = mobileNumber;
