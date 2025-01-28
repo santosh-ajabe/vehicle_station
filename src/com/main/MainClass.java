@@ -1,7 +1,4 @@
 package com.main;
-
-
-
 import com.biling.Bill;
 import com.biling.ReturnBill;
 import com.customer.*;
@@ -371,6 +368,12 @@ public class MainClass {
 		String name = scanner.nextLine();
 		partManager.deletePart(name);
 		System.out.println("Part deleted.");
+	}
+
+	
+
+	public static Date getToday() {
+	    return new Date(); // Returns the current date and time
 	}
 
 }
