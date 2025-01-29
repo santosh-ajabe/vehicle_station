@@ -6,10 +6,12 @@ public class ServiceStationFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public ServiceStationFrame() {
-   
-        setTitle("Vehicle Service Station - Java Programming @ SunBeam Infotech");
+
+        
+		setTitle("Vehicle Service Station");
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(700, 400);
+        setSize(750, 400);
         setLayout(null);
 
         
@@ -18,61 +20,72 @@ public class ServiceStationFrame extends JFrame {
 
     private void initComponents() {
         // Date Label and Field
-        JLabel dateLabel = new JLabel("Date:");
-        dateLabel.setBounds(20, 20, 50, 20);
-        add(dateLabel);
-
+   
         JTextField dateField = new JTextField("25-09-2015");
-        dateField.setBounds(70, 20, 120, 20);
+        dateField.setBounds(20, 20, 90, 25);
         add(dateField);
 
         // Accounts Button
         JButton accountsButton = new JButton("Accounts");
-        accountsButton.setBounds(200, 20, 100, 20);
+        accountsButton.setBounds(125, 20,85, 25);
         add(accountsButton);
 
-        // Active Service Requests List
-        JLabel activeRequestsLabel = new JLabel("Active Service Req.");
-        activeRequestsLabel.setBounds(200, 60, 200, 150);
-        add(activeRequestsLabel);
-
-        JList<String> activeRequestsList = new JList<>(new String[]{});
-        activeRequestsList.setBounds(200, 80, 200, 150);
-        add(activeRequestsList);
-
-        // Finish Request Button
-        JButton finishRequestButton = new JButton("Finish Request");
-        finishRequestButton.setBounds(200, 300, 150, 30);
-        add(finishRequestButton);
+        
 
         // Details and Amount Table
         
         JTable detailsTable = new JTable(new Object[][]{}, new String[]{"Details", "Amount"});
         JScrollPane tableScrollPane = new JScrollPane(detailsTable);
-        tableScrollPane.setBounds(20, 60, 150, 20);
+        tableScrollPane.setBounds(20, 60,195, 20);
         add(tableScrollPane);
 
         // Total Business Label
         JLabel totalBusinessLabel = new JLabel("Total Business: Rs. 0.0");
-        totalBusinessLabel.setBounds(20, 240, 200, 20);
+        totalBusinessLabel.setBounds(20, 260, 200, 20);
         add(totalBusinessLabel);
 
         // Print Bill and Save All Buttons
         JButton printBillButton = new JButton("Print Bill");
-        printBillButton.setBounds(20, 270, 100, 30);
+        printBillButton.setBounds(20, 300, 90, 25);
         add(printBillButton);
 
         JButton saveAllButton = new JButton("Save All");
-        saveAllButton.setBounds(150, 270, 100, 30);
+        saveAllButton.setBounds(120, 300, 90, 25);
         add(saveAllButton);
+        
+        
+     // Active Service Requests List
+        JLabel activeRequestsLabel = new JLabel("Active Service Reqest");
+        activeRequestsLabel.setBounds(225,20, 200,20);
+        add(activeRequestsLabel);
+       
+        JList<String> activeRequestsList = new JList<>(new String[]{});
+        //activeRequestsList.setBounds(225,50, 150, 200);
+        add(activeRequestsList);
+        
+        JScrollPane serviceReqScrollPane = new JScrollPane(activeRequestsList);
+        serviceReqScrollPane.setBounds(225,50, 150, 200);
+        add(serviceReqScrollPane);
+        
+        
+
+        // Finish Request Button
+        JButton finishRequestButton = new JButton("Finish Request");
+        finishRequestButton.setBounds(225,260,150, 25);
+        add(finishRequestButton);
+        
+        //new request
+        JButton newServiceRequestButton = new JButton("New Service Req");
+        newServiceRequestButton.setBounds(225,300,150, 25);
+        add(newServiceRequestButton);
 
         // Customer and Service Section
         JLabel customerLabel = new JLabel("sakshi");
-        customerLabel.setBounds(450, 60, 100, 20);
+        customerLabel.setBounds(400, 40, 100, 20);
         add(customerLabel);
 
         JLabel serviceIDLabel = new JLabel("615");
-        serviceIDLabel.setBounds(450, 80, 100, 20);
+        serviceIDLabel.setBounds(400,60, 100, 20);
         add(serviceIDLabel);
 
         JList<String> serviceList = new JList<>(new String[]{
@@ -81,16 +94,20 @@ public class ServiceStationFrame extends JFrame {
                 "[O] engine_oil - 300.0"
         });
         JScrollPane serviceScrollPane = new JScrollPane(serviceList);
-        serviceScrollPane.setBounds(450, 110, 200, 100);
+        serviceScrollPane.setBounds(400, 80, 140, 200);
         add(serviceScrollPane);
-
+        
+        JScrollPane partScrollPane = new JScrollPane();
+        partScrollPane.setBounds(560, 80, 140, 200);
+        add(partScrollPane);
+        
         // New Service and New Part Buttons
         JButton newServiceButton = new JButton("New Service");
-        newServiceButton.setBounds(450, 220, 120, 30);
+        newServiceButton.setBounds(400, 300, 140, 25);
         add(newServiceButton);
 
         JButton newPartButton = new JButton("New Part");
-        newPartButton.setBounds(580, 220, 100, 30);
+        newPartButton.setBounds(560, 300, 140, 25);
         add(newPartButton);
     }
 }
