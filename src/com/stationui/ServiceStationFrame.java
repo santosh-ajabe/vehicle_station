@@ -6,13 +6,13 @@ public class ServiceStationFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public ServiceStationFrame() {
-        // Set frame properties
+   
         setTitle("Vehicle Service Station - Java Programming @ SunBeam Infotech");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(700, 400);
         setLayout(null);
 
-        // Add components
+        
         initComponents();
     }
 
