@@ -373,7 +373,7 @@ public class MainClass {
 	
 
 	public static Date getToday() {
-	    return new Date(); // Returns the current date and time
+	    return new Date(); 
 	}
 
 }
