@@ -5,6 +5,10 @@ import java.util.*;
 import com.parts.*;
 
 public class Services implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String serviceId;
 	private String description;
 	private List<Part> replacedParts;
