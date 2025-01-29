@@ -398,4 +398,14 @@ public class MainClass implements Serializable{
 		System.out.println("Part deleted.");
 	}
 
+<<<<<<< HEAD
 }
+=======
+	
+
+	public static Date getToday() {
+	    return new Date(); 
+	}
+
+}
+>>>>>>> main

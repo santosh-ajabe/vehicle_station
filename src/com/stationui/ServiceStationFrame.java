@@ -6,13 +6,19 @@ public class ServiceStationFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public ServiceStationFrame() {
+
+<<<<<<< HEAD
+        
+=======
         // Set frame properties
+>>>>>>> main
 		setTitle("Vehicle Service Station");
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(750, 400);
         setLayout(null);
 
-        // Add components
+        
         initComponents();
     }
 
