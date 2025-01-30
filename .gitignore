@@ -10,5 +10,7 @@ test.txt
 .txt
 .dat
 
+
 git rm --cached customers.txt
 git rm --cached bills.txt
+

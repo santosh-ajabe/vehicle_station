@@ -30,6 +30,10 @@ public class ManageCustomer {
         }
         return null;
     }
+public HashSet<Customer> getCustomers(){
+	
+	return customers;}
+
 
     public void displayAllCustomers() {
         if (customers.isEmpty()) {

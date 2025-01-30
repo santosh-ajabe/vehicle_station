@@ -5,7 +5,11 @@ import java.util.*;
 import com.vehicle.Vehicle;
 
 public class Customer implements Serializable {
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String name;
     private String address;
     private String mobileNumber;
     private HashMap<String, Vehicle> vehicles;
@@ -53,7 +57,9 @@ public class Customer implements Serializable {
     public void addVehicle(Vehicle vehicle) {
         vehicles.put(vehicle.getVehicleNumber(), vehicle);
     }
-
+    public Vehicle getVehicle(String vno) {
+        return vehicles.get(vno);
+    }
     public void removeVehicle(String vehicleNumber) {
         vehicles.remove(vehicleNumber);
     }

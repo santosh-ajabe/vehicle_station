@@ -1,4 +1,7 @@
 package com.main;
+
+
+
 import com.biling.Bill;
 import com.biling.ReturnBill;
 import com.customer.*;
@@ -6,10 +9,17 @@ import com.menu.Menu;
 import com.parts.*;
 import com.services.*;
 import com.vehicle.*;
+
+import java.io.Serializable;
 import java.util.*;
 import com.biling.*;
 
-public class MainClass {
+public class MainClass implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		ManageCustomer manageCustomer = new ManageCustomer();
@@ -18,6 +28,7 @@ public class MainClass {
 		PartManager partManager = new PartManager();
 		Bill bill = new Bill();
 		ReturnBill returnBill = new ReturnBill();
+		Customer customer=new Customer();
 
 		// ManageService manageService = new ManageService();
 		Maintenance maintenance = new Maintenance();
@@ -37,7 +48,7 @@ public class MainClass {
 				handleCustomerMenu(scanner, manageCustomer);
 				break;
 			case 2:
-				handleVehicleMenu(scanner, manageVehicle, manageCustomer);
+				handleVehicleMenu(scanner, manageVehicle, manageCustomer, customer);
 				break;
 			case 3:
 				handleServiceRequestMenu(scanner, manageServices, manageCustomer, manageVehicle, partManager);
@@ -141,7 +152,7 @@ public class MainClass {
 		System.out.println("Customer deleted.");
 	}
 
-	private static void handleVehicleMenu(Scanner scanner, ManageVehicle manageVehicle, ManageCustomer manageCustomer) {
+	private static void handleVehicleMenu(Scanner scanner, ManageVehicle manageVehicle, ManageCustomer manageCustomer, Customer customer) {
 		Menu menu = new Menu();
 
 		while (true) {
@@ -155,13 +166,13 @@ public class MainClass {
 				addVehicle(scanner, manageVehicle, manageCustomer);
 				break;
 			case 2:
-				manageVehicle.displayAllVehicles();
+				displayAllVehicles(manageCustomer);
 				break;
 			case 3:
 				displayCustomerVehicles(scanner, manageVehicle, manageCustomer);
 				break;
 			case 4:
-				editVehicle(scanner, manageVehicle);
+				editVehicle(scanner, manageVehicle,  manageCustomer,customer);
 				break;
 			case 5:
 				deleteVehicle(scanner, manageVehicle);
@@ -191,6 +202,17 @@ public class MainClass {
 		}
 	}
 
+     public static void displayAllVehicles(ManageCustomer manageCustomer) {
+    	 manageCustomer.loadCustomers();
+    	 HashSet<Customer> customers=manageCustomer.getCustomers();
+    	 for(Customer customer: customers) {
+             
+            	 customer.getVehicles().values().forEach(System.out::println);
+    	 }
+    	 
+    	 
+    }
+	
 	private static void displayCustomerVehicles(Scanner scanner, ManageVehicle manageVehicle,
 			ManageCustomer manageCustomer) {
 		manageCustomer.loadCustomers();
@@ -204,17 +226,23 @@ public class MainClass {
 		}
 	}
 
-	private static void editVehicle(Scanner scanner, ManageVehicle manageVehicle) {
+	private static void editVehicle(Scanner scanner, ManageVehicle manageVehicle, ManageCustomer manageCustomer,Customer customer) {
 		System.out.print("Enter vehicle registration number to edit: ");
 		String vehicleNumber = scanner.nextLine();
-		Vehicle vehicle = manageVehicle.getVehicle(vehicleNumber);
-		if (vehicle != null) {
-			System.out.print("Enter new vehicle type: ");
-			vehicle.setVehicleNumber(scanner.nextLine());
-			System.out.println("Vehicle details updated.");
-		} else {
-			System.out.println("Vehicle not found.");
-		}
+		 manageCustomer.loadCustomers();
+		 Vehicle vehicle=customer.getVehicles().get(vehicleNumber);
+		 if (customer != null) {
+			 System.out.print("Enter vehicle registration number: ");
+				vehicle.setVehicleNumber(scanner.nextLine());
+				System.out.print("Enter vehicle company name: ");
+				vehicle.setType(scanner.nextLine());
+				manageCustomer.saveCustomers();
+				System.out.println("Vehicle edited successfully.");
+			} else {
+				System.out.println("vehicle not found.");
+			}
+    	 
+    	 
 	}
 
 	private static void deleteVehicle(Scanner scanner, ManageVehicle manageVehicle) {
@@ -370,6 +398,9 @@ public class MainClass {
 		System.out.println("Part deleted.");
 	}
 
+<<<<<<< HEAD
+}
+=======
 	
 
 	public static Date getToday() {
@@ -377,3 +408,4 @@ public class MainClass {
 	}
 
 }
+>>>>>>> main
