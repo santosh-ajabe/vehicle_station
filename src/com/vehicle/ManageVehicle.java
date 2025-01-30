@@ -1,6 +1,4 @@
 package com.vehicle;
-
-
 import java.util.HashMap;
 
 import com.customer.ManageCustomer;
