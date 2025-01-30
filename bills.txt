@@ -1,0 +1,27 @@
+Customer: 12
+Vehicle: mh12
+Total Amount: 1789.0
+Tax (12.6%): 225.41400000000002
+Final Amount: 2014.414
+-------------------------------------
+Date: Thu Jan 30 14:49:43 IST 2025
+Customer: 11
+Vehicle: mh11
+Total Amount: 2843.0
+Tax (12.6%): 358.218
+Final Amount: 3201.218
+-------------------------------------------------------------
+Date: Thu Jan 30 15:07:34 IST 2025
+Customer: 3131
+Vehicle: mh31
+Total Amount: 1700.0
+Tax (12.6%): 214.2
+Final Amount: 1914.2
+-------------------------------------------------------------
+Date: Thu Jan 30 15:33:14 IST 2025
+Customer: 9999
+Vehicle: mh24
+Total Amount: 1100.0
+Tax (12.6%): 138.6
+Final Amount: 1238.6
+-------------------------------------------------------------

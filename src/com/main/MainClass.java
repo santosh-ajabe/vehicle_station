@@ -1,7 +1,5 @@
 package com.main;
 
-
-
 import com.biling.Bill;
 import com.biling.ReturnBill;
 import com.customer.*;
@@ -15,9 +13,7 @@ import java.util.*;
 import com.biling.*;
 
 public class MainClass implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
@@ -59,11 +55,14 @@ public class MainClass implements Serializable{
 				break;
 			case 5:
 				System.out.println("Displaying today's business (Placeholder)");
-				returnBill.viewTodaysBusiness();
+				ServiceSubMenuLogic s = new ServiceSubMenuLogic();
+				s.viewTodaysBusiness();
 
 				break;
 			case 6:
 				System.out.println("Enter date (Placeholder):");
+				ServiceSubMenuLogic s1 = new ServiceSubMenuLogic();
+				s1.viewBusinessByDate(null);
 				break;
 			default:
 				System.out.println("Invalid choice. Try again.");
@@ -264,21 +263,19 @@ public class MainClass implements Serializable{
 			case 0:
 				return;
 			case 1:
-				selectCustomerVehicle(scanner, manageCustomer, manageVehicle);
+				//selectCustomerVehicle(scanner, manageCustomer, manageVehicle);
 				break;
 			case 2:
 
 				ServiceSubMenuLogic sb = new ServiceSubMenuLogic();
 
 				sb.handleServiceRequestMenu(scanner, manageServices, manageCustomer, manageVehicle, partManager);
-				processRequest(scanner, manageServices, manageCustomer, manageVehicle, partManager);
+			//	processRequest(scanner, manageServices, manageCustomer, manageVehicle, partManager);
 
 				break;
 			case 3:
 				prepareAndDisplayBill();
-				ReturnBill b = new ReturnBill();
-				b.createBill(scanner, manageCustomer, manageVehicle, manageServices);
-				b.viewReturnBillDetails(b);
+				
 				break;
 			case 4:
 				getBillPaymentFromCustomer();
@@ -292,28 +289,28 @@ public class MainClass implements Serializable{
 		}
 	}
 
-	private static void selectCustomerVehicle(Scanner scanner, ManageCustomer manageCustomer,
-			ManageVehicle manageVehicle) {
-		System.out.print("Enter customer mobile number to select vehicle: ");
-		String mobileNumber = scanner.nextLine();
-		Customer customer = manageCustomer.getCustomer(mobileNumber);
-		if (customer != null) {
-			customer.getVehicles().values().forEach(System.out::println);
-		} else {
-			System.out.println("Customer not found.");
-		}
-	}
+//	private static void selectCustomerVehicle(Scanner scanner, ManageCustomer manageCustomer,
+//			ManageVehicle manageVehicle) {
+//		System.out.print("Enter customer mobile number to select vehicle: ");
+//		String mobileNumber = scanner.nextLine();
+//		Customer customer = manageCustomer.getCustomer(mobileNumber);
+//		if (customer != null) {
+//			customer.getVehicles().values().forEach(System.out::println);
+//		} else {
+//			System.out.println("Customer not found.");
+//		}
+//	}
 
 	private static void processRequest(Scanner scanner, ManageServices manageServices, ManageCustomer manageCustomer,
-			ManageVehicle manageVehicle, PartManager partManager) {
+	ManageVehicle manageVehicle, PartManager partManager) {
 
 		System.out.println("Processing service request...");
 		Menu menu = new Menu();
 		menu.displayProcessRequestMenu();
-		System.out.println(menu);
+	System.out.println(menu);
 		
 
-	}
+	 }
 
 	@Override
 	public String toString() {
@@ -398,9 +395,7 @@ public class MainClass implements Serializable{
 		System.out.println("Part deleted.");
 	}
 
-<<<<<<< HEAD
-}
-=======
+
 	
 
 	public static Date getToday() {
@@ -408,4 +403,4 @@ public class MainClass implements Serializable{
 	}
 
 }
->>>>>>> main
+
