@@ -7,11 +7,11 @@ public class ServiceStationFrame extends JFrame {
 
 	public ServiceStationFrame() {
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         
-=======
+//=======
         // Set frame properties
->>>>>>> main
+//>>>>>>> main
 		setTitle("Vehicle Service Station");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

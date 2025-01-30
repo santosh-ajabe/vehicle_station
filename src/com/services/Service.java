@@ -21,7 +21,7 @@ public class Service {
 
 	public char[] getServiceDetails() {
 	
-		return null;
+		return getServiceDetails();
 		
 	}
 }

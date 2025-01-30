@@ -13,7 +13,7 @@ public class ManageServices {
         this.services = new ArrayList<>();
     }
 
-    public void addService(com.services.Service service) {
+    public void addServices(com.services.Service service) {
         services.addAll((Collection<? extends Service>) service);
     }
 
